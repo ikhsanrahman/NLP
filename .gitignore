@@ -3,3 +3,4 @@ en
 test.zip
 train.zip
 tune_model.py
+__pycache__
