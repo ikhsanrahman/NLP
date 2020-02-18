@@ -137,7 +137,7 @@ classifier = Classifier(
 
 print("classifier accuracy percent:", (nltk.classify.accuracy(classifier, testing_set))*100)
 
-end = start = datetime.datetime.now()
-final_time = end-time
+end = datetime.datetime.now()
+final_time = end-start
 
 print("final_time", final_time)

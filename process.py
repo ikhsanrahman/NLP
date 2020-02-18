@@ -20,7 +20,6 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 
 documents = []
-
 all_words = []
 
 class Classifier(ClassifierI):
@@ -76,25 +75,7 @@ def remove_stopwords(word):
     if word.lower() not in sw:
         return word.lower()
 
-for data in data_pos.split():
-    if data != None:
-        stopword = remove_stopwords(data)
-        if stopword != None:
-            documents.append( (stopword, "pos") )
 
-        token_pos = word_tokenize(data_pos)
-        for w in token_pos:
-            all_words.append(w.lower())
-
-for data in data_neg.split():
-    if data != None:
-        stopword = remove_stopwords(data)
-        if stopword != None:
-            documents.append( (stopword, "neg") )
-
-        token_neg = word_tokenize(data_neg)
-        for w in token_neg:
-            all_words.append(w.lower())
 
 print( w == None for w in documents)
 
@@ -122,7 +103,7 @@ for rev, category in documents:
 
 # positive data example:      
 training_set = featuresets[:4500]
-testing_set =  featuresets[3800:]
+testing_set =  featuresets[4500:]
 
 
 classifier = nltk.NaiveBayesClassifier.train(training_set)

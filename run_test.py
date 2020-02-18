@@ -14,8 +14,6 @@ documents = pickle.load(documents_f)
 documents_f.close()
 
 
-
-
 word_features_f = open("pickle/word_features.pickle", "rb")
 word_features = pickle.load(word_features_f)
 word_features5k_f.close()
@@ -53,7 +51,6 @@ MNB_classifier = pickle.load(open_file)
 open_file.close()
 
 
-
 open_file = open("pickle/BernoulliNB_classifier5k.pickle", "rb")
 BernoulliNB_classifier = pickle.load(open_file)
 open_file.close()
@@ -76,9 +73,6 @@ classifier = Classifier(
                     BernoulliNB_classifier,
                     LogisticRegression_classifier
                 )
-
-
-
 
 def sentiment(text):
     feats = find_features(text)
